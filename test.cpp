@@ -8,12 +8,6 @@ using namespace std;
 int main(int argc, char **argv)
 {
     OpensslEcdsaEngine engine;
-
-    ENGINE *e = ENGINE_by_id("mbedtls");
-    if(e==NULL){
-        cout<<"ENGINE_by_id failed"<<endl;
-    }
-
     char *data = "sjkdfjksdfalsdjkfas";
     const unsigned char *priv = ecdsa_privkey;
     EC_KEY *ec_privkey = EC_KEY_new();

@@ -98,10 +98,14 @@ OpensslEcdsaEngine::OpensslEcdsaEngine()
     {
         cout << "ENGINE_set_EC failed" << endl;
     }
+    if(!ENGINE_set_default(engine,ENGINE_METHOD_EC)){
+        cout<<"ENGINE_set_default failed"<<endl;
+    }
     if (!ENGINE_add(engine))
     {
         cout << "ENGINE_add failed" << endl;
     }
+
 }
 
 OpensslEcdsaEngine::~OpensslEcdsaEngine()
