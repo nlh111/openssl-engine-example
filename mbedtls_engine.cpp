@@ -1,6 +1,7 @@
 #include "mbedtls_engine.h"
 #include <iostream>
 #include <mbedtls/platform.h>
+#include <functional>
 using namespace std;
 
 int OpensslEcdsaEngine::ecdsa_sign(int type, const unsigned char *dgst, int dlen, unsigned char *sig,
@@ -105,13 +106,14 @@ OpensslEcdsaEngine::OpensslEcdsaEngine()
     {
         cout << "ENGINE_add failed" << endl;
     }
-
 }
 
 OpensslEcdsaEngine::~OpensslEcdsaEngine()
 {
     EC_KEY_METHOD_free(ec_key_method);
+    ENGINE_finish(engine);
     ENGINE_free(engine);
 }
 
 MbedtlsEcdsaCtx OpensslEcdsaEngine::ctx = MbedtlsEcdsaCtx();
+

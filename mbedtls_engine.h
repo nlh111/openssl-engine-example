@@ -43,7 +43,6 @@ class OpensslEcdsaEngine
                const BIGNUM *kinv, const BIGNUM *r, EC_KEY *eckey);
     static int ecdsa_verify(int type, const unsigned char *dgst, int dgst_len, const unsigned char *sigbuf, int sig_len,
                  EC_KEY *eckey);
-
 };
 
 const unsigned char ecdsa_privkey[] = {

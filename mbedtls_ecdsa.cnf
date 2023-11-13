@@ -1,0 +1,10 @@
+openssl_conf =        openssl_def
+[openssl_def]
+engines = engine_section
+[engine_section]
+engine_x = engine_x_section
+[engine_x_section]
+engine_id = mbedtls
+dynamic_path = /Users/nlh/Desktop/openssl-engine-example/build/libmbedtls_engine.dylib
+default_algorithms = ALL
+init = 1

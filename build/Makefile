@@ -142,6 +142,19 @@ ecdsa/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ecdsa.dir/build.make CMakeFiles/ecdsa.dir/build
 .PHONY : ecdsa/fast
 
+#=============================================================================
+# Target rules for targets named mbedtls_engine
+
+# Build rule for target.
+mbedtls_engine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mbedtls_engine
+.PHONY : mbedtls_engine
+
+# fast build rule for target.
+mbedtls_engine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mbedtls_engine.dir/build.make CMakeFiles/mbedtls_engine.dir/build
+.PHONY : mbedtls_engine/fast
+
 mbedtls_engine.o: mbedtls_engine.cpp.o
 
 .PHONY : mbedtls_engine.o
@@ -149,6 +162,7 @@ mbedtls_engine.o: mbedtls_engine.cpp.o
 # target to build an object file
 mbedtls_engine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ecdsa.dir/build.make CMakeFiles/ecdsa.dir/mbedtls_engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mbedtls_engine.dir/build.make CMakeFiles/mbedtls_engine.dir/mbedtls_engine.cpp.o
 .PHONY : mbedtls_engine.cpp.o
 
 mbedtls_engine.i: mbedtls_engine.cpp.i
@@ -158,6 +172,7 @@ mbedtls_engine.i: mbedtls_engine.cpp.i
 # target to preprocess a source file
 mbedtls_engine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ecdsa.dir/build.make CMakeFiles/ecdsa.dir/mbedtls_engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mbedtls_engine.dir/build.make CMakeFiles/mbedtls_engine.dir/mbedtls_engine.cpp.i
 .PHONY : mbedtls_engine.cpp.i
 
 mbedtls_engine.s: mbedtls_engine.cpp.s
@@ -167,6 +182,7 @@ mbedtls_engine.s: mbedtls_engine.cpp.s
 # target to generate assembly for a file
 mbedtls_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ecdsa.dir/build.make CMakeFiles/ecdsa.dir/mbedtls_engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mbedtls_engine.dir/build.make CMakeFiles/mbedtls_engine.dir/mbedtls_engine.cpp.s
 .PHONY : mbedtls_engine.cpp.s
 
 test.o: test.cpp.o
@@ -205,6 +221,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ecdsa"
+	@echo "... mbedtls_engine"
 	@echo "... mbedtls_engine.o"
 	@echo "... mbedtls_engine.i"
 	@echo "... mbedtls_engine.s"
